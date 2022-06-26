@@ -1,3 +1,4 @@
+import "./css/style.css";
 import introDesktop from "./assets/image-intro-desktop.jpg";
 import iconSnappy from "./assets/icon-snappy-process.svg";
 import iconAffordable from "./assets/icon-affordable-prices.svg";

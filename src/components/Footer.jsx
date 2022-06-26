@@ -56,8 +56,8 @@ const Footer = () => {
             <SocialIcon iconSrc={icon.src} iconAlt={icon.alt} />
           ))}
         </div>
-        <hr className={`${block}__divider`} />
       </div>
+      <hr className={`${block}__divider`} />
       <div className={`${block}__container`}>
         {footerColumns.map((column) => (
           <FooterColumn heading={column.heading} links={column.links} />

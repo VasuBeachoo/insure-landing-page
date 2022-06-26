@@ -1,0 +1,96 @@
+///////////////////////////////////////
+// IMPORTS ////////////////////////////
+
+///////////////////////////////////////
+// VARIABLES //////////////////////////
+
+///////////////////////////////////////
+// MIXINS /////////////////////////////
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin section() {
+  width: 100%;
+}
+
+///////////////////////////////////////
+// FUNCTIONS //////////////////////////
+
+///////////////////////////////////////
+// STYLES /////////////////////////////
+
+body {
+  margin: 0;
+}
+
+.page-container {
+  @include flex(row, center, flex-start);
+  min-height: 100vh;
+}
+
+.page {
+  @include flex(column, flex-start, center);
+}
+
+.header {
+  @include flex(row, space-between, center);
+  width: 100%;
+
+  &__links {
+    @include flex(row, space-around, center);
+  }
+}
+
+.intro {
+  @include flex(row, center, flex-start);
+  @include section();
+
+  &__container {
+    @include flex(column, flex-start, flex-start);
+  }
+}
+
+.features {
+  @include flex(column, flex-start, flex-start);
+  @include section();
+
+  &__container {
+    @include flex(row, space-between, flex-start);
+  }
+
+  &__feature {
+    @include flex(column, flex-start, flex-start);
+  }
+}
+
+.cta {
+  @include flex(column, center, center);
+  @include section();
+
+  &__container {
+    @include flex(row, space-between, center);
+  }
+}
+
+.footer {
+  @include flex(column, flex-start, center);
+  width: 100%;
+
+  &__container {
+    @include flex(row, space-between, flex-start);
+    width: 100%;
+  }
+
+  &__social-icons {
+    @include flex(row, space-between, center);
+  }
+
+  &__column {
+    @include flex(column, flex-start, flex-start);
+  }
+}
