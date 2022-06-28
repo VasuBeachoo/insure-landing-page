@@ -53,7 +53,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
-  padding: 12px 150px 12px;
+  padding: 14px 150px 14px;
   background-color: white;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -82,7 +82,7 @@ body {
 }
 
 .header__logo {
-  width: 100px;
+  width: 105px;
 }
 
 .header__links {
@@ -120,12 +120,16 @@ body {
 
 .header__btn {
   all: unset;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-family: "Karla", sans-serif;
   font-size: 14px;
   font-weight: 700;
   text-align: center;
   border: 2px solid;
-  padding: 8px 25px;
+  padding: 10px 25px;
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }
@@ -197,9 +201,9 @@ body {
 
 .intro__heading {
   font-family: "DM Serif Display", serif;
-  font-size: 60px;
+  font-size: 56px;
   font-weight: 400;
-  line-height: 60px;
+  line-height: 56px;
   margin: 0;
 }
 
@@ -215,12 +219,16 @@ body {
 
 .intro__btn {
   all: unset;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-family: "Karla", sans-serif;
   font-size: 14px;
   font-weight: 700;
   text-align: center;
   border: 2px solid;
-  padding: 8px 25px;
+  padding: 10px 25px;
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }
@@ -251,7 +259,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
-  padding: 220px 150px 140px;
+  padding: 220px 150px 130px;
   background-color: white;
 }
 
@@ -334,7 +342,7 @@ body {
   font-weight: 400;
   line-height: 27px;
   margin: 0;
-  margin: 25px 0 12px 0;
+  margin: 28px 0 14px 0;
 }
 
 .features__paragraph {
@@ -363,7 +371,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
-  padding: 0 150px 0;
+  padding: 0 150px 135px;
   background-color: white;
 }
 
@@ -383,6 +391,10 @@ body {
           align-items: center;
   background-color: #2d2640;
   color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  padding: 50px 70px;
 }
 
 .cta__container__paragraph {
@@ -402,20 +414,26 @@ body {
 
 .cta__heading {
   font-family: "DM Serif Display", serif;
-  font-size: 36px;
+  font-size: 43px;
   font-weight: 400;
-  line-height: 36px;
+  line-height: 43px;
   margin: 0;
+  line-height: 46.5px;
+  max-width: 380px;
 }
 
 .cta__btn {
   all: unset;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-family: "Karla", sans-serif;
   font-size: 14px;
   font-weight: 700;
   text-align: center;
   border: 2px solid;
-  padding: 8px 25px;
+  padding: 10px 25px;
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }

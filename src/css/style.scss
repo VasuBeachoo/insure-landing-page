@@ -69,12 +69,13 @@ $body-font: "Karla", sans-serif;
 
 @mixin btn() {
   all: unset;
+  user-select: none;
   font-family: $body-font;
   font-size: 14px;
   font-weight: 700;
   text-align: center;
   border: 2px solid;
-  padding: 8px 25px;
+  padding: 10px 25px;
   transition: 0.25s;
 
   &:hover {
@@ -151,12 +152,12 @@ body {
 
 .header {
   @include flex(row, space-between, center);
-  @include section(12px);
+  @include section(14px);
   @include white-bg();
   user-select: none;
 
   &__logo {
-    width: 100px;
+    width: 105px;
   }
 
   &__links {
@@ -193,7 +194,7 @@ body {
   }
 
   &__heading {
-    @include heading(60px);
+    @include heading(56px);
   }
 
   &__paragraph {
@@ -215,7 +216,7 @@ body {
 
 .features {
   @include flex(column, flex-start, flex-start);
-  @include section(220px, 140px);
+  @include section(220px, 130px);
   @include white-bg();
 
   &__hr {
@@ -243,7 +244,7 @@ body {
 
   &__heading {
     @include heading(27px);
-    margin: 25px 0 12px 0;
+    margin: 28px 0 14px 0;
   }
 
   &__paragraph {
@@ -255,16 +256,21 @@ body {
 
 .cta {
   @include flex(column, center, center);
-  @include section();
+  @include section(0, 135px);
   background-color: color(White);
 
   &__container {
     @include flex(row, space-between, center);
     @include violet-bg();
+    box-sizing: border-box;
+    width: 100%;
+    padding: 50px 70px;
   }
 
   &__heading {
-    @include heading();
+    @include heading(43px);
+    line-height: 46.5px;
+    max-width: 380px;
   }
 
   &__btn {
