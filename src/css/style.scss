@@ -31,23 +31,30 @@ $body-font: "Karla", sans-serif;
 @mixin section($padding-top: 0, $padding-bottom: $padding-top) {
   box-sizing: border-box;
   width: 100%;
-  padding: $padding-top 100px $padding-bottom;
+  padding: $padding-top 150px $padding-bottom;
 }
 
 @mixin heading($font-size: 36px) {
   font-family: $heading-font;
   font-size: $font-size;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+  line-height: $font-size * 1;
+  margin: 0;
 }
 
 @mixin paragraph($font-size: 14px) {
   font-family: $body-font;
   font-size: $font-size;
+  letter-spacing: 0.5px;
+  line-height: $font-size * 1.6;
 }
 
 @mixin link($font-size: 14px) {
   font-family: $body-font;
   font-size: $font-size;
   font-weight: 700;
+  letter-spacing: 0.1px;
   transition: 0.2s;
 
   &:hover {
@@ -167,23 +174,37 @@ body {
 
 .intro {
   @include flex(row, center, flex-start);
-  @include section();
+  @include section(80px, 0);
   @include violet-bg();
 
   &__container {
     @include flex(column, flex-start, flex-start);
   }
 
+  &__hr {
+    width: 25%;
+    background-color: color(White);
+    opacity: 0.75;
+    margin: 0 auto 0 0;
+  }
+
   &__heading {
-    @include heading();
+    @include heading(60px);
+    margin: 55px 0 0 0;
   }
 
   &__paragraph {
-    @include paragraph();
+    @include paragraph(15px);
+    max-width: 450px;
+    margin: 25px 0 32px 0;
   }
 
   &__btn {
     @include btn();
+  }
+
+  &__img {
+    width: 450px;
   }
 }
 
