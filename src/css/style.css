@@ -154,6 +154,7 @@ body {
   padding: 80px 150px 0;
   background-color: #2d2640;
   color: white;
+  height: 510px;
 }
 
 .intro__paragraph {
@@ -188,27 +189,26 @@ body {
 }
 
 .intro__hr {
-  width: 25%;
-  background-color: white;
+  width: 120px;
   opacity: 0.75;
-  margin: 0 auto 0 0;
+  margin: 0 auto 50px 0;
+  background-color: white;
 }
 
 .intro__heading {
   font-family: "DM Serif Display", serif;
   font-size: 60px;
   font-weight: 400;
-  letter-spacing: 0.1px;
   line-height: 60px;
   margin: 0;
-  margin: 55px 0 0 0;
 }
 
 .intro__paragraph {
   font-family: "Karla", sans-serif;
   font-size: 15px;
-  letter-spacing: 0.5px;
   line-height: 24px;
+  margin: 0;
+  letter-spacing: 0.5px;
   max-width: 450px;
   margin: 25px 0 32px 0;
 }
@@ -231,6 +231,7 @@ body {
 
 .intro__img {
   width: 450px;
+  z-index: 1;
 }
 
 .features {
@@ -250,7 +251,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
-  padding: 0 150px 0;
+  padding: 220px 150px 140px;
   background-color: white;
 }
 
@@ -274,13 +275,20 @@ body {
   color: white;
 }
 
+.features__hr {
+  width: 120px;
+  opacity: 0.75;
+  margin: 0 auto 50px 0;
+  background-color: #2b272f;
+}
+
 .features__section-heading {
   font-family: "DM Serif Display", serif;
-  font-size: 36px;
+  font-size: 56px;
   font-weight: 400;
-  letter-spacing: 0.1px;
-  line-height: 36px;
+  line-height: 56px;
   margin: 0;
+  margin: 0 0 70px 0;
 }
 
 .features__container {
@@ -297,6 +305,7 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  width: 100%;
 }
 
 .features__feature {
@@ -315,20 +324,26 @@ body {
           align-items: flex-start;
 }
 
+.features__icon {
+  width: 64px;
+}
+
 .features__heading {
   font-family: "DM Serif Display", serif;
-  font-size: 36px;
+  font-size: 27px;
   font-weight: 400;
-  letter-spacing: 0.1px;
-  line-height: 36px;
+  line-height: 27px;
   margin: 0;
+  margin: 25px 0 12px 0;
 }
 
 .features__paragraph {
   font-family: "Karla", sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  line-height: 22.4px;
+  font-size: 15px;
+  line-height: 24px;
+  margin: 0;
+  letter-spacing: 0px;
+  max-width: 300px;
 }
 
 .cta {
@@ -389,7 +404,6 @@ body {
   font-family: "DM Serif Display", serif;
   font-size: 36px;
   font-weight: 400;
-  letter-spacing: 0.1px;
   line-height: 36px;
   margin: 0;
 }
@@ -487,8 +501,8 @@ body {
 .footer__heading {
   font-family: "Karla", sans-serif;
   font-size: 14px;
-  letter-spacing: 0.5px;
   line-height: 22.4px;
+  margin: 0;
 }
 
 .footer__link {
