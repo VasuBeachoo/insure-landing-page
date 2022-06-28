@@ -53,7 +53,7 @@ const App = () => {
         </section>
         <section className="features">
           <hr className="features__hr" />
-          <h1 className="features__heading">We're different</h1>
+          <h1 className="features__section-heading">We're different</h1>
           <div className="features__container">
             {features.map((feature) => (
               <Feature

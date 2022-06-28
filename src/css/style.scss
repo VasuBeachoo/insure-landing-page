@@ -1,8 +1,22 @@
 ///////////////////////////////////////
 // IMPORTS ////////////////////////////
 
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap");
+
 ///////////////////////////////////////
 // VARIABLES //////////////////////////
+
+$colors: (
+  Dark-Violet: hsl(256, 26%, 20%),
+  Grayish-Blue: hsl(216, 30%, 68%),
+  Very-Dark-Violet: hsl(270, 9%, 17%),
+  Dark-Grayish-Violet: hsl(273, 4%, 51%),
+  Very-Light-Gray: hsl(0, 0%, 98%),
+  White: hsl(0, 0%, 100%),
+);
+
+$heading-font: "DM Serif Display", serif;
+$body-font: "Karla", sans-serif;
 
 ///////////////////////////////////////
 // MIXINS /////////////////////////////
@@ -14,12 +28,98 @@
   align-items: $align;
 }
 
-@mixin section() {
+@mixin section($padding-top: 0, $padding-bottom: $padding-top) {
+  box-sizing: border-box;
   width: 100%;
+  padding: $padding-top 100px $padding-bottom;
+}
+
+@mixin heading($font-size: 36px) {
+  font-family: $heading-font;
+  font-size: $font-size;
+}
+
+@mixin paragraph($font-size: 14px) {
+  font-family: $body-font;
+  font-size: $font-size;
+}
+
+@mixin link($font-size: 14px) {
+  font-family: $body-font;
+  font-size: $font-size;
+  font-weight: 700;
+  transition: 0.2s;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@mixin btn() {
+  all: unset;
+  font-family: $body-font;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  border: 2px solid;
+  padding: 8px 25px;
+  transition: 0.25s;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@mixin violet-bg() {
+  background-color: color(Dark-Violet);
+  color: color(White);
+
+  &__paragraph {
+    opacity: 0.8;
+  }
+
+  button {
+    background-color: color(Dark-Violet);
+    color: color(White);
+    border-color: color(White);
+
+    &:hover {
+      background-color: color(White);
+      color: color(Dark-Violet);
+    }
+  }
+}
+
+@mixin white-bg() {
+  background-color: color(White);
+
+  h1,
+  h2,
+  h3 {
+    color: color(Dark-Violet);
+  }
+
+  p {
+    color: color(Dark-Grayish-Violet);
+  }
+
+  button {
+    color: color(Very-Dark-Violet);
+    border-color: color(Very-Dark-Violet);
+
+    &:hover {
+      background-color: color(Very-Dark-Violet);
+      color: color(White);
+    }
+  }
 }
 
 ///////////////////////////////////////
 // FUNCTIONS //////////////////////////
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
 
 ///////////////////////////////////////
 // STYLES /////////////////////////////
@@ -39,25 +139,62 @@ body {
 
 .header {
   @include flex(row, space-between, center);
-  width: 100%;
+  @include section(12px);
+  @include white-bg();
+  user-select: none;
+
+  &__logo {
+    width: 100px;
+  }
 
   &__links {
     @include flex(row, space-around, center);
+    width: 450px;
+  }
+
+  &__link {
+    @include link(14px);
+
+    &:hover {
+      color: color(Very-Dark-Violet);
+    }
+  }
+
+  &__btn {
+    @include btn();
   }
 }
 
 .intro {
   @include flex(row, center, flex-start);
   @include section();
+  @include violet-bg();
 
   &__container {
     @include flex(column, flex-start, flex-start);
+  }
+
+  &__heading {
+    @include heading();
+  }
+
+  &__paragraph {
+    @include paragraph();
+  }
+
+  &__btn {
+    @include btn();
   }
 }
 
 .features {
   @include flex(column, flex-start, flex-start);
   @include section();
+  @include white-bg();
+
+  &__section-heading {
+    @include heading();
+  }
 
   &__container {
     @include flex(row, space-between, flex-start);
@@ -66,20 +203,40 @@ body {
   &__feature {
     @include flex(column, flex-start, flex-start);
   }
+
+  &__heading {
+    @include heading();
+  }
+
+  &__paragraph {
+    @include paragraph();
+  }
 }
 
 .cta {
   @include flex(column, center, center);
   @include section();
+  background-color: color(White);
 
   &__container {
     @include flex(row, space-between, center);
+    @include violet-bg();
+  }
+
+  &__heading {
+    @include heading();
+  }
+
+  &__btn {
+    @include btn();
   }
 }
 
 .footer {
   @include flex(column, flex-start, center);
-  width: 100%;
+  @include section();
+  user-select: none;
+  background-color: color(Very-Light-Gray);
 
   &__container {
     @include flex(row, space-between, flex-start);
@@ -92,5 +249,13 @@ body {
 
   &__column {
     @include flex(column, flex-start, flex-start);
+  }
+
+  &__heading {
+    @include paragraph();
+  }
+
+  &__link {
+    @include link();
   }
 }
