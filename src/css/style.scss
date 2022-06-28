@@ -48,18 +48,19 @@ $body-font: "Karla", sans-serif;
   margin: 0;
 }
 
-@mixin paragraph($font-size: 14px) {
+@mixin paragraph($font-size: 15px) {
   font-family: $body-font;
   font-size: $font-size;
   line-height: $font-size * 1.6;
   margin: 0;
 }
 
-@mixin link($font-size: 14px) {
+@mixin link($font-size: 15px) {
   font-family: $body-font;
   font-size: $font-size;
   font-weight: 700;
   letter-spacing: 0.1px;
+  margin: 0;
   transition: 0.2s;
 
   &:hover {
@@ -80,6 +81,16 @@ $body-font: "Karla", sans-serif;
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+@mixin social-icon() {
+  width: 21px;
+  transition: 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    filter: brightness(0);
   }
 }
 
@@ -280,17 +291,33 @@ body {
 
 .footer {
   @include flex(column, flex-start, center);
-  @include section();
+  @include section(30px, 15px);
   user-select: none;
   background-color: color(Very-Light-Gray);
 
   &__container {
     @include flex(row, space-between, flex-start);
     width: 100%;
+    padding: 20px 0;
+  }
+
+  &__logo {
+    width: 100px;
+  }
+
+  &__hr {
+    width: 100%;
+    background-color: color(Dark-Grayish-Violet);
+    opacity: 0.2;
   }
 
   &__social-icons {
     @include flex(row, space-between, center);
+    width: 125px;
+  }
+
+  &__social-icon {
+    @include social-icon();
   }
 
   &__column {
@@ -298,10 +325,18 @@ body {
   }
 
   &__heading {
-    @include paragraph();
+    @include paragraph(15px);
+    color: color(Dark-Grayish-Violet);
+    margin: 0 0 24px 0;
   }
 
   &__link {
-    @include link();
+    @include link(15px);
+    color: color(Dark-Violet);
+    margin: 0 0 12px 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

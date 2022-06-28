@@ -106,6 +106,7 @@ body {
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.1px;
+  margin: 0;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -459,7 +460,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
-  padding: 0 150px 0;
+  padding: 30px 150px 15px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -482,6 +483,17 @@ body {
       -ms-flex-align: start;
           align-items: flex-start;
   width: 100%;
+  padding: 20px 0;
+}
+
+.footer__logo {
+  width: 100px;
+}
+
+.footer__hr {
+  width: 100%;
+  background-color: #837d87;
+  opacity: 0.2;
 }
 
 .footer__social-icons {
@@ -498,6 +510,19 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 125px;
+}
+
+.footer__social-icon {
+  width: 21px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.footer__social-icon:hover {
+  cursor: pointer;
+  -webkit-filter: brightness(0);
+          filter: brightness(0);
 }
 
 .footer__column {
@@ -518,21 +543,30 @@ body {
 
 .footer__heading {
   font-family: "Karla", sans-serif;
-  font-size: 14px;
-  line-height: 22.4px;
+  font-size: 15px;
+  line-height: 24px;
   margin: 0;
+  color: #837d87;
+  margin: 0 0 24px 0;
 }
 
 .footer__link {
   font-family: "Karla", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.1px;
+  margin: 0;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  color: #2d2640;
+  margin: 0 0 12px 0;
 }
 
 .footer__link:hover {
   cursor: pointer;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */

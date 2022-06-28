@@ -57,7 +57,7 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <hr className={`${block}__divider`} />
+      <hr className={`${block}__hr`} />
       <div className={`${block}__container`}>
         {footerColumns.map((column) => (
           <FooterColumn heading={column.heading} links={column.links} />
