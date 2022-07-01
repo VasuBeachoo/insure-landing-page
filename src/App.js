@@ -1,15 +1,41 @@
+import { useState } from "react";
 import "./css/style.css";
 import introDesktop from "./assets/image-intro-desktop.jpg";
 import iconSnappy from "./assets/icon-snappy-process.svg";
 import iconAffordable from "./assets/icon-affordable-prices.svg";
 import iconPeople from "./assets/icon-people-first.svg";
 import Header from "./components/Header";
+import Link from "./components/Link";
 import Button from "./components/Button";
 import Feature from "./components/Feature";
 import CtaBlock from "./components/CtaBlock";
 import Footer from "./components/Footer";
 
 const App = () => {
+  const [menu, setMenu] = useState(false);
+
+  const TEXT_TYPE = "text";
+  const BTN_TYPE = "button";
+
+  const navLinks = [
+    {
+      type: TEXT_TYPE,
+      label: "HOW WE WORK",
+    },
+    {
+      type: TEXT_TYPE,
+      label: "BLOG",
+    },
+    {
+      type: TEXT_TYPE,
+      label: "ACCOUNT",
+    },
+    {
+      type: BTN_TYPE,
+      label: "VIEW PLANS",
+    },
+  ];
+
   const features = [
     {
       iconSrc: iconSnappy,
@@ -34,11 +60,31 @@ const App = () => {
     },
   ];
 
+  function renderLinks(links, block) {
+    return links.map((link) => {
+      const type = link.type;
+      if (type === TEXT_TYPE) {
+        return <Link block={block} linkText={link.label} />;
+      } else if (type === BTN_TYPE) {
+        return <Button block={block} btnText={link.label} />;
+      } else {
+        return <div></div>;
+      }
+    });
+  }
+
   return (
     <div className="page-container">
       <div className="page">
-        <Header />
+        <Header
+          navLinks={renderLinks(navLinks, "header")}
+          menu={menu}
+          setMenu={setMenu}
+        />
         <section className="intro">
+          {menu && (
+            <div className="intro__menu">{renderLinks(navLinks, "intro")}</div>
+          )}
           <div className="intro__container">
             <hr className="intro__hr" />
             <h1 className="intro__heading">Humanizing your insurance.</h1>

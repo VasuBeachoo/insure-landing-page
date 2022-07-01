@@ -18,6 +18,8 @@ $colors: (
 $heading-font: "DM Serif Display", serif;
 $body-font: "Karla", sans-serif;
 
+$mobile-width: 1140px;
+
 ///////////////////////////////////////
 // MIXINS /////////////////////////////
 
@@ -32,12 +34,20 @@ $body-font: "Karla", sans-serif;
   box-sizing: border-box;
   width: 100%;
   padding: $padding-top 150px $padding-bottom;
+
+  @include mobile() {
+    padding: $padding-top 0 $padding-bottom;
+  }
 }
 
 @mixin hr() {
   width: 120px;
   opacity: 0.75;
   margin: 0 auto 50px 0;
+
+  @include mobile() {
+    margin-right: 0;
+  }
 }
 
 @mixin heading($font-size: 36px) {
@@ -81,6 +91,24 @@ $body-font: "Karla", sans-serif;
 
   &:hover {
     cursor: pointer;
+  }
+
+  @include mobile() {
+    width: 100%;
+    font-size: 16px;
+    padding: 16px 5px;
+  }
+}
+
+@mixin menu-icon() {
+  display: none;
+
+  @include mobile() {
+    display: block;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
@@ -138,6 +166,12 @@ $body-font: "Karla", sans-serif;
   }
 }
 
+@mixin mobile() {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+
 ///////////////////////////////////////
 // FUNCTIONS //////////////////////////
 
@@ -159,6 +193,7 @@ body {
 
 .page {
   @include flex(column, flex-start, center);
+  width: 100%;
 }
 
 .header {
@@ -172,8 +207,8 @@ body {
   }
 
   &__links {
-    @include flex(row, space-around, center);
-    width: 450px;
+    @include flex(row, space-between, center);
+    width: 410px;
   }
 
   &__link {
@@ -187,6 +222,14 @@ body {
   &__btn {
     @include btn();
   }
+
+  &__menu-open {
+    @include menu-icon();
+  }
+
+  &__menu-close {
+    @include menu-icon();
+  }
 }
 
 .intro {
@@ -194,6 +237,22 @@ body {
   @include section(80px, 0);
   @include violet-bg();
   height: 510px;
+
+  &__menu {
+    @include flex(column, space-around, center);
+    width: 70%;
+    min-height: 270px;
+    padding: 40px 0;
+    order: 1;
+  }
+
+  &__link {
+    @include link(17px);
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 
   &__container {
     @include flex(column, flex-start, flex-start);
@@ -222,12 +281,13 @@ body {
   &__img {
     width: 450px;
     z-index: 1;
+    margin: 0 0 0 20px;
   }
 }
 
 .features {
   @include flex(column, flex-start, flex-start);
-  @include section(220px, 130px);
+  @include section(220px, 120px);
   @include white-bg();
 
   &__hr {
@@ -247,6 +307,7 @@ body {
 
   &__feature {
     @include flex(column, flex-start, flex-start);
+    margin: 0 20px;
   }
 
   &__icon {
@@ -337,6 +398,104 @@ body {
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+@include mobile() {
+  .header {
+    padding: 20px;
+
+    &__logo {
+      width: 100px;
+    }
+
+    &__links {
+      display: none;
+    }
+  }
+
+  .intro {
+    @include flex(column-reverse, flex-start, center);
+    height: auto;
+    padding: 0;
+
+    &__img {
+      width: 100%;
+      max-height: 700px;
+      margin: 0;
+    }
+
+    &__container {
+      align-items: center;
+      text-align: center;
+      padding: 75px 50px;
+    }
+
+    &__heading {
+      font-size: 50px;
+    }
+
+    &__paragraph {
+      max-width: 500px;
+    }
+  }
+
+  .features {
+    align-items: center;
+    padding: 100px 0 75px 0;
+
+    &__section-heading {
+      font-size: 50px;
+      margin-bottom: 55px;
+    }
+
+    &__container {
+      @include flex(column, flex-start, center);
+    }
+
+    &__feature {
+      align-items: center;
+      text-align: center;
+      margin: 0 0 40px 0;
+    }
+  }
+
+  .cta {
+    &__container {
+      @include flex(column, flex-start, center);
+      width: 90%;
+      text-align: center;
+    }
+
+    &__heading {
+      margin: 0 0 30px 0;
+    }
+  }
+
+  .footer {
+    padding: 35px 0 0 0;
+
+    &__container {
+      @include flex(column, flex-start, center);
+    }
+
+    &__logo {
+      margin: 0 0 22px 0;
+    }
+
+    &__hr {
+      width: 85%;
+      margin: 20px 0;
+    }
+
+    &__column {
+      align-items: center;
+      margin: 0 0 25px 0;
+    }
+
+    &__heading {
+      margin-bottom: 10px;
     }
   }
 }
