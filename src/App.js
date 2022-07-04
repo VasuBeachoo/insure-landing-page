@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./css/style.css";
 import introDesktop from "./assets/image-intro-desktop.jpg";
 import iconSnappy from "./assets/icon-snappy-process.svg";
@@ -72,6 +72,17 @@ const App = () => {
       }
     });
   }
+
+  function resizeWindow() {
+    if (window.innerWidth > 1140) {
+      setMenu(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("resize", resizeWindow);
+    return () => window.removeEventListener("resize", resizeWindow);
+  });
 
   return (
     <div className="page-container">
